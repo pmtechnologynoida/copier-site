@@ -1,0 +1,593 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PM Technology - Photocopier, Digital Printer Sale, Rent & Service in Noida. Toner, spare parts, label, sticker and barcode printing solutions.">
+    <title>PM Technology | Copier & Printer Solutions</title>
+    <style>
+        :root {
+            --blue: #0b4ea2;
+            --dark: #10233f;
+            --light: #f5f8fc;
+            --accent: #ff8a00;
+            --text: #25364d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        .top {
+            background: var(--dark);
+            color: #fff;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+
+        .top .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: #fff;
+            box-shadow: 0 2px 15px #00000012;
+        }
+
+        .nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 26px;
+            color: var(--blue);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .menu {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #082e63, #0b5db8);
+            color: #fff;
+            padding: 82px 0 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: #ffffff12;
+            right: -130px;
+            top: -150px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffffff18;
+            border: 1px solid #ffffff35;
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.08;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 650px;
+            color: #eaf3ff;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 800;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-light {
+            background: #fff;
+            color: var(--blue);
+        }
+
+        .hero-card {
+            background: #fff;
+            color: var(--text);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 20px 50px #001d4433;
+        }
+
+        .hero-card h3 {
+            color: var(--blue);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .hero-card li {
+            list-style: none;
+            padding: 9px 0;
+            border-bottom: 1px solid #e8edf4;
+        }
+
+        .hero-card li:last-child {
+            border: 0;
+        }
+
+        section {
+            padding: 75px 0;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 40px;
+        }
+
+        .section-head h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .section-head p {
+            color: #65758a;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            padding: 28px;
+            border: 1px solid #e3e9f1;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 8px 25px #10233f0a;
+            transition: .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px #10233f16;
+        }
+
+        .icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+
+        .alt {
+            background: var(--light);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .checks {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .check {
+            font-weight: 700;
+        }
+
+        .check:before {
+            content: "✓";
+            color: #168447;
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        .cta {
+            background: linear-gradient(120deg, #0b4ea2, #082e63);
+            color: #fff;
+            border-radius: 20px;
+            padding: 45px;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-box {
+            padding: 30px;
+            border: 1px solid #e1e7ef;
+            border-radius: 15px;
+        }
+
+        .contact-row {
+            display: flex;
+            gap: 14px;
+            margin: 18px 0;
+        }
+
+        .contact-row b {
+            display: block;
+            color: var(--dark);
+        }
+
+        footer {
+            background: #0c1b30;
+            color: #d8e4f3;
+            padding: 35px 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #aebed2;
+            margin-top: 10px;
+        }
+
+        .float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #20b858;
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 50px;
+            font-weight: 900;
+            box-shadow: 0 8px 25px #0003;
+            z-index: 30;
+        }
+
+        @media(max-width:800px) {
+            nav {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 76px;
+                background: #fff;
+                padding: 18px 5%;
+                flex-direction: column;
+                align-items: flex-start;
+                box-shadow: 0 8px 20px #0001;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero-grid, .about, .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:520px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .checks {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .top .container {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top">
+    <div class="container">
+        <span>📍 Noida, Uttar Pradesh</span>
+        <span>📞 9711559005 &nbsp; | &nbsp; ✉ pmtechnologiesnoida@gmail.com</span>
+    </div>
+</div>
+
+<header>
+    <div class="container nav">
+        <a class="logo" href="#">PM <span>TECHNOLOGY</span></a>
+        <div class="menu" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge">Professional Printing Solutions</div>
+                <h1>Copier & Printer<br>Solutions You Can Trust</h1>
+                <p>Photocopier machines, digital printers and complete printing solutions — <b>Sale, Rent & Service</b> in Noida and nearby areas.</p>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="tel:+919711559005">Call Now</a>
+                    <a class="btn btn-light" href="https://wa.me/919711559005?text=Hello%20PM%20Technology%2C%20I%20need%20a%20printing%20solution." target="_blank">WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Our Key Services</h3>
+                <ul>
+                    <li>✓ Photocopier Machine Sale & Rental</li>
+                    <li>✓ Digital Printer Sale, Rent & Service</li>
+                    <li>✓ Copier / Printer Repair & Maintenance</li>
+                    <li>✓ Toner & Spare Parts</li>
+                    <li>✓ Label, Sticker & Barcode Printing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-head">
+                <h2>Our Services</h2>
+                <p>From machine supply to after-sales support, PM Technology provides practical printing solutions for offices and businesses.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">🖨️</div>
+                    <h3>Photocopier Machines</h3>
+                    <p>New and second-hand copier machines for office and commercial requirements.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>Machine on Rent</h3>
+                    <p>Flexible copier and printer rental solutions with service support.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🔧</div>
+                    <h3>Repair & Service</h3>
+                    <p>Professional maintenance and troubleshooting for photocopiers and printers.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🖨️</div>
+                    <h3>Digital Printers</h3>
+                    <p>Digital printing equipment for everyday office and production needs.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🧴</div>
+                    <h3>Toner & Spare Parts</h3>
+                    <p>Toner, consumables and spare parts for various copier and printer models.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏷️</div>
+                    <h3>Label & Barcode Printing</h3>
+                    <p>Sticker, tag, label, barcode, QR code and packaging label printing solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt" id="about">
+        <div class="container about">
+            <div>
+                <h2>About PM Technology</h2>
+                <p>PM Technology is a printing-solutions business based in Sector 63, Noida. We focus on photocopier and digital printer sales, rentals, servicing and related printing requirements.</p>
+                <div class="checks">
+                    <div class="check">Sale & Rental</div>
+                    <div class="check">Service Support</div>
+                    <div class="check">Toner & Spares</div>
+                    <div class="check">Printing Solutions</div>
+                </div>
+            </div>
+            <div class="cta">
+                <h2>Need a Copier or Printer?</h2>
+                <p>Tell us your requirement and our team can help you choose a suitable machine or rental solution.</p>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="tel:+919711559005">9711559005</a>
+                    <a class="btn btn-light" href="mailto:pmtechnologiesnoida@gmail.com">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions">
+        <div class="container">
+            <div class="section-head">
+                <h2>Printing Solutions</h2>
+                <p>Solutions for offices, shops, manufacturers and businesses.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Office Printing</h3>
+                    <p>Reliable photocopying, scanning and document-printing equipment.</p>
+                </div>
+                <div class="card">
+                    <h3>Business Printing</h3>
+                    <p>Digital printers and production-oriented printing requirements.</p>
+                </div>
+                <div class="card">
+                    <h3>Labels & Stickers</h3>
+                    <p>Barcode stickers, product labels, address labels, QR labels and packaging labels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="alt">
+        <div class="container">
+            <div class="section-head">
+                <h2>Contact PM Technology</h2>
+                <p>Get in touch for machine sale, rental, service or printing requirements.</p>
+            </div>
+            <div class="contact">
+                <div class="contact-box">
+                    <div class="contact-row">
+                        <div>📍</div>
+                        <div><b>Address</b>H.211, Sector 63, Noida, U.P. 201301, India</div>
+                    </div>
+                    <div class="contact-row">
+                        <div>📞</div>
+                        <div><b>Phone</b><a href="tel:+919711559005">9711559005</a></div>
+                    </div>
+                    <div class="contact-row">
+                        <div>✉️</div>
+                        <div><b>Email</b><a href="mailto:pmtechnologiesnoida@gmail.com">pmtechnologiesnoida@gmail.com</a></div>
+                    </div>
+                    <div class="contact-row">
+                        <div>🌐</div>
+                        <div><b>Website</b>pminfo.in</div>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <h3>Quick Enquiry</h3>
+                    <p style="margin:10px 0 20px">For quotation, rental or service requirements, contact us directly on WhatsApp.</p>
+                    <a class="btn btn-primary" href="https://wa.me/919711559005?text=Hello%20PM%20Technology%2C%20please%20share%20details%20for%20my%20requirement." target="_blank">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <b>PM TECHNOLOGY</b>
+            <div class="small">Copier & Printer • Sale • Rent • Service</div>
+        </div>
+        <div class="small">© 2026 PM Technology. All Rights Reserved.</div>
+    </div>
+</footer>
+
+<a class="float" href="https://wa.me/919711559005" target="_blank">WhatsApp</a>
+
+<script>
+    document.querySelectorAll('nav a').forEach(a => {
+        a.addEventListener('click', () => document.querySelector('nav').classList.remove('show'));
+    });
+</script>
+
+</body>
+</html>
